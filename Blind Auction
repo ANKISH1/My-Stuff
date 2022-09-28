@@ -1,0 +1,33 @@
+from replit import clear
+from art import logo
+print(logo)
+auction = {}
+a = True
+
+def highest_bidder(dict):
+  highest_amount = 0
+  winner = ""
+  for i in dict:
+    bid_amount = dict[i]
+    if bid_amount>highest_amount:
+      highest_amount = bid_amount
+      winner = i
+  print(f"Highest bidder is {winner} and bid amount is {highest_amount}")
+
+while a == True:
+  name = input("Whats your name: ")
+  bid = int(input("Whats your bid: $"))
+  auction[name] = bid
+  bidder = input("Is there any other bidder, Type 'Yes' or 'No'\n ")
+  if bidder == "Yes":
+    a = True
+    clear()
+  else:
+    a = False
+    clear()
+    highest_bidder(auction) 
+  
+
+
+     
+
